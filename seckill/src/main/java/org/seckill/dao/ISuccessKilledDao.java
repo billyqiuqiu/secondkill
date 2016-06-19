@@ -6,6 +6,6 @@ public interface ISuccessKilledDao {
 	
 	int insertSuccessKill(Long seckillId, Long userPhone);
 	
-	SuccessKilled queryByIdWithSeckill(Long seckillId);
+	SuccessKilled queryByIdWithSeckill(Long seckillId, Long userPhone);
 
 }

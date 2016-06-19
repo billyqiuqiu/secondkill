@@ -6,16 +6,16 @@
 <mapper namespace="org.seckill.dao.ISeckillDao">
    <update id="reduceNumber">
        UPDATE seckill SET number = number-1 
-       WHERE seckillId = #{seckillId} 
-       AND start_time <![CDATA[<=]]> #{killTime} 
-       AND end_time >= #{killTime}
+       WHERE seckill_Id = #{0} 
+       AND start_time <![CDATA[<=]]> #{1} 
+       AND end_time >= #{1}
        AND number > 0;           
    </update>
    <select id="queryById" resultType="Seckill" parameterType="Long">
        SELECT * FROM seckill WHERE seckill_id = #{seckillId};
    </select>
    
-   <select id="queryAll" resultType="Seckill">
-       SELECT * FROM seckill order by create_time desc limit #{offset},#{limit};
+   <select id="queryAll" resultType="Seckill" >
+       SELECT * FROM seckill order by create_time desc limit #{0},#{1};
    </select>
 </mapper>

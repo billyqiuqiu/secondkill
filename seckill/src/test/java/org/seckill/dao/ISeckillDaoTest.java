@@ -1,6 +1,10 @@
 package org.seckill.dao;
 
 import static org.junit.Assert.*;
+
+import java.sql.Date;
+import java.util.List;
+
 import javax.annotation.*;
 
 import org.junit.Test;
@@ -14,12 +18,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class ISeckillDaoTest {
 
 	@Resource
-    private ISeckillDao seckillDao;
-	
-	@Test
-	public void testReduceNumber() {
-		
-	}
+    private ISeckillDao seckillDao;	
 	
 	@Test
 	public void testQueryById() {
@@ -34,6 +33,27 @@ public class ISeckillDaoTest {
 	@Test
 	public void testQueryAll() {
 		
+		int offset = 1;
+		int limit = 3;
+				
+		
+		List<Seckill> seckillList = seckillDao.queryAll(offset, limit);
+		
+		System.out.println("Item count" + seckillList.size());
+		for(Seckill item : seckillList){
+			
+			System.out.println(item.getName());
+		}
+	}
+	
+	@Test
+	public void testReduceNumber() {
+		
+		Long seckillId = 1001L;
+		Date killTime = Date.valueOf("2016-06-10");
+		
+		int result = seckillDao.reduceNumber(seckillId, killTime);
+		System.out.println("Kill OK " + result);
 	}
 
 }
