@@ -32,7 +32,7 @@ public enum SeckillStateEnum {
 		this.stateInfo = stateInfo;
 	}
 	
-	private static SeckillStateEnum valueOf(int index){
+	public static SeckillStateEnum valueOf(int index){
 		SeckillStateEnum[] values = SeckillStateEnum.values();
 		
 		for(SeckillStateEnum state : values){

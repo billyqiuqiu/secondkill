@@ -20,4 +20,6 @@ public interface SeckillService {
 	SeckillExecution executeSeckill(Long seckillId, Long userPhone, String md5) throws RepeatKillException,
 	SeckillCloseException,SeckillException;
 	
+	String getMD5(Long seckillId);
+	
 }

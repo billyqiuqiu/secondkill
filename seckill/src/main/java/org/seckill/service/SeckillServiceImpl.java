@@ -68,7 +68,7 @@ public class SeckillServiceImpl implements SeckillService {
 		return exposer;
 	}
 
-	private String getMD5(Long seckillId) {
+	public String getMD5(Long seckillId) {
 		
 		String base = seckillId + "/" + salt;
 		String md5 = DigestUtils.md5DigestAsHex(base.getBytes());

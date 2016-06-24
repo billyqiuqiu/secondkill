@@ -12,10 +12,23 @@
        AND number > 0;           
    </update>
    <select id="queryById" resultType="Seckill" parameterType="Long">
-       SELECT * FROM seckill WHERE seckill_id = #{seckillId};
+       SELECT
+            seckill_id seckillId,
+			name,
+			number,
+			start_time startTime,
+			end_time endTime,
+			create_time createTime
+			FROM seckill WHERE seckill_id = #{seckillId};
    </select>
    
    <select id="queryAll" resultType="Seckill" >
-       SELECT * FROM seckill order by create_time desc limit #{0},#{1};
+       SELECT seckill_id seckillId,
+			name,
+			number,
+			start_time startTime,
+			end_time endTime,
+			create_time createTime
+			FROM seckill order by create_time desc limit #{0},#{1};
    </select>
 </mapper>
