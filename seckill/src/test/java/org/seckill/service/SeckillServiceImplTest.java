@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 import org.seckill.dto.Exposer;
 import org.seckill.dto.SeckillExecution;
 import org.seckill.entity.Seckill;
+import org.seckill.exception.SeckillCloseException;
 import org.seckill.service.SeckillServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -49,7 +50,12 @@ public class SeckillServiceImplTest {
 	@Test
 	public void testExecuteSeckill(){
 		
-		SeckillExecution seckillExe = seckillService.executeSeckill(1001L, 13771883967L, seckillService.getMD5(1001L));
-		System.out.println("Seckill State : " + seckillExe.getStateInfo());
+		try{
+			SeckillExecution seckillExe = seckillService.executeSeckill(1001L, 13771883967L, seckillService.getMD5(1001L));
+			System.out.println("Seckill State : " + seckillExe.getStateInfo());
+		}
+		catch(SeckillCloseException ex){
+			assert(true);
+		}
 	}
 }
