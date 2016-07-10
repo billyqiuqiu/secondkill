@@ -4,7 +4,7 @@ public class Exposer {
 	
 	private boolean exposed;
 	private Long seckillId;
-	private String MD5;
+	private String md5;
 	
 	private long now;
 	private long start;
@@ -14,7 +14,7 @@ public class Exposer {
 		super();
 		this.exposed = exposed;
 		this.seckillId = seckillId;
-		MD5 = mD5;
+		md5 = mD5;
 	}
 
 	public Exposer(boolean exposed, Long seckillId,long now, long start, long end) {
@@ -49,11 +49,11 @@ public class Exposer {
 	}
 
 	public String getMD5() {
-		return MD5;
+		return md5;
 	}
 
 	public void setMD5(String mD5) {
-		MD5 = mD5;
+		md5 = mD5;
 	}
 
 	public long getNow() {

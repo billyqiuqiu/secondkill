@@ -49,9 +49,9 @@
 	    		</table>
 	    	</div>
 	    </div>	 
-	 </div>
-    
+	 </div>   
   </body>
   <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-  <script src="${basePath}js/bootstrap.min.js"></script>
+  <script src="${basePath}js/bootstrap.min.js" type="text/javascript"></script>
+  
 </html>
